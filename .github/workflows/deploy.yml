@@ -99,7 +99,7 @@ jobs:
 
     environment:
       name: production
-      url: http://${{ secrets.EC2_HOST }}
+      url: http://${{ vars.EC2_HOST }}
 
     steps:
       - name: Deploy to EC2 via SSH
