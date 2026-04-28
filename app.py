@@ -4,12 +4,12 @@ from flask import Flask, render_template_string
 app = Flask(__name__)
 
 # ── Configuration from environment variables ──────────────────────────────────
-APP_NAME    = os.environ.get("APP_NAME",    "MyFlaskApp")
-APP_ENV     = os.environ.get("APP_ENV",     "development")
+APP_NAME = os.environ.get("APP_NAME",    "MyFlaskApp")
+APP_ENV = os.environ.get("APP_ENV",     "development")
 APP_VERSION = os.environ.get("APP_VERSION", "1.0.0")
-APP_PORT    = int(os.environ.get("APP_PORT", "5000"))
-APP_AUTHOR  = os.environ.get("APP_AUTHOR",  "Demo User")
-SECRET_KEY  = os.environ.get("SECRET_KEY",  "change-me-in-production")
+APP_PORT = int(os.environ.get("APP_PORT", "5000"))
+APP_AUTHOR = os.environ.get("APP_AUTHOR",  "Demo User")
+SECRET_KEY = os.environ.get("SECRET_KEY",  "change-me-in-production")
 
 app.secret_key = SECRET_KEY
 
@@ -221,21 +221,24 @@ TEMPLATE = """
 </html>
 """
 
+
 @app.route("/")
 def index():
     return render_template_string(
         TEMPLATE,
-        app_name    = APP_NAME,
-        app_env     = APP_ENV,
-        app_version = APP_VERSION,
-        app_port    = APP_PORT,
-        app_author  = APP_AUTHOR,
-        secret_key  = SECRET_KEY,
+        app_name=APP_NAME,
+        app_env=APP_ENV,
+        app_version=APP_VERSION,
+        app_port=APP_PORT,
+        app_author=APP_AUTHOR,
+        secret_key=SECRET_KEY,
     )
+
 
 @app.route("/health")
 def health():
     return {"status": "ok", "app": APP_NAME, "version": APP_VERSION}, 200
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=APP_PORT, debug=(APP_ENV == "development"))
