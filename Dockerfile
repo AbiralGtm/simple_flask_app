@@ -27,12 +27,12 @@ COPY app.py .
 ENV APP_NAME="MyFlaskApp" \
     APP_ENV="production" \
     APP_VERSION="1.0.0" \
-    APP_PORT="5001" \
+    APP_PORT="5000" \
     APP_AUTHOR="Demo User" \
     SECRET_KEY="change-me-in-production"
 
 # Expose the port the app listens on
-EXPOSE 5001
+EXPOSE 5000
 
 # Create a non-root user for security
 RUN addgroup --system appgroup && adduser --system --ingroup appgroup appuser
