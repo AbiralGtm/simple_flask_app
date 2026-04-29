@@ -180,7 +180,7 @@ TEMPLATE = """
           <span class="badge {{ app_env }}">{{ app_env }}</span>
         </h1>
         <p style="font-size:.85rem; color:var(--muted); margin-top:.25rem;">
-          Dockerized Python · Flask · Environment Config Demo
+          Dockerized Python · Flask · Environment Config Demo. Test Success
         </p>
       </div>
     </div>
