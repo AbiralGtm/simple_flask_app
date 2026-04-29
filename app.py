@@ -7,7 +7,7 @@ app = Flask(__name__)
 APP_NAME = os.environ.get("APP_NAME",    "MyFlaskApp")
 APP_ENV = os.environ.get("APP_ENV",     "development")
 APP_VERSION = os.environ.get("APP_VERSION", "1.0.0")
-APP_PORT = int(os.environ.get("APP_PORT", "5000"))
+APP_PORT = int(os.environ.get("APP_PORT", "5001"))
 APP_AUTHOR = os.environ.get("APP_AUTHOR",  "Demo User")
 SECRET_KEY = os.environ.get("SECRET_KEY",  "change-me-in-production")
 
